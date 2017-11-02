@@ -24,7 +24,7 @@
 		<java.version>1.8</java.version>
 	</properties>
 
-	<!-- Changed by Suren for poll check-->
+	<!-- Changed by Suren for pipeline check-->
 
 	<dependencies>
 		<dependency>
