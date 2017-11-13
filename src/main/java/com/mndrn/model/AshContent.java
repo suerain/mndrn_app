@@ -1,29 +1,32 @@
+/**
+ * @author suren
+ *
+ */
+
 package com.mndrn.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
-/**
- * @author suren
- *
- */
-@SuppressWarnings("deprecation")
 @Entity
 public class AshContent {
 	@Id
 	@GeneratedValue
 	private long id;
 
-	@NotEmpty
+	@NotNull
+	@Size(min = 1)
 	private String totalAsh;
 
-	@NotEmpty
+	@NotNull
+	@Size(min = 1)
 	private String acidInsolubleAsh;
 
-	@NotEmpty
+	@NotNull
+	@Size(min = 1)
 	private String waterSolubleAsh;
 
 	public long getId() {
