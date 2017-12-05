@@ -37,17 +37,17 @@ public class Genus {
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "HERBARIUM_ID")
-	private ImageWitExpln herbarium;
+	private Herbarium herbarium;
 
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "PLANT_SPECIUM_ID")
-	private ImageWitExpln plantSpecimen;
+	private PlantSpecimen plantSpecimen;
 
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "PHOTOGRAPH_ID")
-	private ImageWitExpln photograph;
+	private Photograph photograph;
 
 	@OneToOne
 	@Valid
@@ -57,7 +57,7 @@ public class Genus {
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "PHYSICAL_CHAR_ID")
-	private ImageWitExpln phisicalCharacteristics;
+	private PhysicalCharacteristics phisicalCharacteristics;
 
 	@NotNull
 	@Size(min = 1)
@@ -66,7 +66,7 @@ public class Genus {
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "TRAV_SCTN_ID")
-	private ImageWitExpln traverseSection;
+	private TraverseSection traverseSection;
 
 	@OneToOne
 	@Valid
@@ -76,7 +76,7 @@ public class Genus {
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "HPLC_TLC_PFL_ID")
-	private ImageWitTopicExpln HPLC_TLC_profile;
+	private HPLC_TLC_Profile HPLC_TLC_Profile;
 
 	@ManyToMany
 	@JoinTable(name = "GENUS_COMPOUND", joinColumns = @JoinColumn(name = "genusId"), inverseJoinColumns = @JoinColumn(name = "compoundId"))
@@ -89,12 +89,12 @@ public class Genus {
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "TRAD_USES_ID")
-	private ImageWitTopicExpln traditionalUses;
+	private TraditionalUses traditionalUses;
 
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "PHARM_ACTIVITY_ID")
-	private ImageWitTopicExpln pharmacologicalActivity;
+	private PharmacologicalActivity pharmacologicalActivity;
 
 	@ElementCollection
 	private List<String> referenceList;
@@ -131,27 +131,27 @@ public class Genus {
 		this.localNameList = localNameList;
 	}
 
-	public ImageWitExpln getHerbarium() {
+	public Herbarium getHerbarium() {
 		return herbarium;
 	}
 
-	public void setHerbarium(ImageWitExpln herbarium) {
+	public void setHerbarium(Herbarium herbarium) {
 		this.herbarium = herbarium;
 	}
 
-	public ImageWitExpln getPlantSpecimen() {
+	public PlantSpecimen getPlantSpecimen() {
 		return plantSpecimen;
 	}
 
-	public void setPlantSpecimen(ImageWitExpln plantSpecimen) {
+	public void setPlantSpecimen(PlantSpecimen plantSpecimen) {
 		this.plantSpecimen = plantSpecimen;
 	}
 
-	public ImageWitExpln getPhotograph() {
+	public Photograph getPhotograph() {
 		return photograph;
 	}
 
-	public void setPhotograph(ImageWitExpln photograph) {
+	public void setPhotograph(Photograph photograph) {
 		this.photograph = photograph;
 	}
 
@@ -163,11 +163,11 @@ public class Genus {
 		this.ashContent = ashContent;
 	}
 
-	public ImageWitExpln getPhisicalCharacteristics() {
+	public PhysicalCharacteristics getPhisicalCharacteristics() {
 		return phisicalCharacteristics;
 	}
 
-	public void setPhisicalCharacteristics(ImageWitExpln phisicalCharacteristics) {
+	public void setPhisicalCharacteristics(PhysicalCharacteristics phisicalCharacteristics) {
 		this.phisicalCharacteristics = phisicalCharacteristics;
 	}
 
@@ -179,11 +179,11 @@ public class Genus {
 		this.moistureContent = moistureContent;
 	}
 
-	public ImageWitExpln getTraverseSection() {
+	public TraverseSection getTraverseSection() {
 		return traverseSection;
 	}
 
-	public void setTraverseSection(ImageWitExpln traverseSection) {
+	public void setTraverseSection(TraverseSection traverseSection) {
 		this.traverseSection = traverseSection;
 	}
 
@@ -195,12 +195,12 @@ public class Genus {
 		this.photoChemScreening = photoChemScreening;
 	}
 
-	public ImageWitTopicExpln getHPLC_TLC_profile() {
-		return HPLC_TLC_profile;
+	public HPLC_TLC_Profile getHPLC_TLC_Profile() {
+		return HPLC_TLC_Profile;
 	}
 
-	public void setHPLC_TLC_profile(ImageWitTopicExpln hPLC_TLC_profile) {
-		HPLC_TLC_profile = hPLC_TLC_profile;
+	public void setHPLC_TLC_Profile(HPLC_TLC_Profile hPLC_TLC_Profile) {
+		HPLC_TLC_Profile = hPLC_TLC_Profile;
 	}
 
 	public List<Compound> getChemConstinuentList() {
@@ -219,19 +219,19 @@ public class Genus {
 		DNABarcoding = dNABarcoding;
 	}
 
-	public ImageWitTopicExpln getTraditionalUses() {
+	public TraditionalUses getTraditionalUses() {
 		return traditionalUses;
 	}
 
-	public void setTraditionalUses(ImageWitTopicExpln traditionalUses) {
+	public void setTraditionalUses(TraditionalUses traditionalUses) {
 		this.traditionalUses = traditionalUses;
 	}
 
-	public ImageWitTopicExpln getPharmacologicalActivity() {
+	public PharmacologicalActivity getPharmacologicalActivity() {
 		return pharmacologicalActivity;
 	}
 
-	public void setPharmacologicalActivity(ImageWitTopicExpln pharmacologicalActivity) {
+	public void setPharmacologicalActivity(PharmacologicalActivity pharmacologicalActivity) {
 		this.pharmacologicalActivity = pharmacologicalActivity;
 	}
 

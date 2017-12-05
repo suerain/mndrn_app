@@ -33,7 +33,7 @@ public class Compound {
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "CHEM_STR_ID")
-	private ImageWitExpln chemicalStructure;
+	private ChemicalStructure chemicalStructure;
 
 	@ManyToMany(mappedBy = "chemConstinuentList")
 	private List<Genus> isolatedFrom;
@@ -49,27 +49,27 @@ public class Compound {
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "PHYSICAL_CHRC_ID")
-	private ImageWitExpln physicalCharacteristics;
+	private PhysicalCharacteristics physicalCharacteristics;
 
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "IR_DATA_ID")
-	private ImageWitTopicExpln IRData;
+	private IRData IRData;
 
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "NM_DATA_ID")
-	private ImageWitTopicExpln NMRData;
+	private NMRData NMRData;
 
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "MS_DATA_ID")
-	private ImageWitTopicExpln MSData;
+	private MSData MSData;
 
 	@OneToOne
 	@Valid
 	@JoinColumn(name = "PHARM_ACTIVITY_ID")
-	private ImageWitTopicExpln pharmacologicalActivity;
+	private PharmacologicalActivity pharmacologicalActivity;
 
 	@ElementCollection
 	private List<String> referenceList;
@@ -98,11 +98,11 @@ public class Compound {
 		IUPACName = iUPACName;
 	}
 
-	public ImageWitExpln getChemicalStructure() {
+	public ChemicalStructure getChemicalStructure() {
 		return chemicalStructure;
 	}
 
-	public void setChemicalStructure(ImageWitExpln chemicalStructure) {
+	public void setChemicalStructure(ChemicalStructure chemicalStructure) {
 		this.chemicalStructure = chemicalStructure;
 	}
 
@@ -130,43 +130,43 @@ public class Compound {
 		this.solubility = solubility;
 	}
 
-	public ImageWitExpln getPhysicalCharacteristics() {
+	public PhysicalCharacteristics getPhysicalCharacteristics() {
 		return physicalCharacteristics;
 	}
 
-	public void setPhysicalCharacteristics(ImageWitExpln physicalCharacteristics) {
+	public void setPhysicalCharacteristics(PhysicalCharacteristics physicalCharacteristics) {
 		this.physicalCharacteristics = physicalCharacteristics;
 	}
 
-	public ImageWitTopicExpln getIRData() {
+	public IRData getIRData() {
 		return IRData;
 	}
 
-	public void setIRData(ImageWitTopicExpln iRData) {
+	public void setIRData(IRData iRData) {
 		IRData = iRData;
 	}
 
-	public ImageWitTopicExpln getNMRData() {
+	public NMRData getNMRData() {
 		return NMRData;
 	}
 
-	public void setNMRData(ImageWitTopicExpln nMRData) {
+	public void setNMRData(NMRData nMRData) {
 		NMRData = nMRData;
 	}
 
-	public ImageWitTopicExpln getMSData() {
+	public MSData getMSData() {
 		return MSData;
 	}
 
-	public void setMSData(ImageWitTopicExpln mSData) {
+	public void setMSData(MSData mSData) {
 		MSData = mSData;
 	}
 
-	public ImageWitTopicExpln getPharmacologicalActivity() {
+	public PharmacologicalActivity getPharmacologicalActivity() {
 		return pharmacologicalActivity;
 	}
 
-	public void setPharmacologicalActivity(ImageWitTopicExpln pharmacologicalActivity) {
+	public void setPharmacologicalActivity(PharmacologicalActivity pharmacologicalActivity) {
 		this.pharmacologicalActivity = pharmacologicalActivity;
 	}
 
