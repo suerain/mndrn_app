@@ -1144,6 +1144,7 @@ img {
 .img-circle {
   border-radius: 50%;
 }
+
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1411,7 +1412,6 @@ a.bg-danger:focus {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eee;
 }
 ul,
 ol {
@@ -6757,4 +6757,5 @@ button.close {
     display: none !important;
   }
 }
+
 /*# sourceMappingURL=bootstrap.css.map */
