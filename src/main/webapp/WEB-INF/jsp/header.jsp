@@ -1,47 +1,21 @@
-<header class="main-header">
-	<!-- Logo -->
-	<!-- Header Navbar: style can be found in header.less -->
-	<nav class="navbar navbar-static-top">
-		<!-- Sidebar toggle button-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid col-xs-12"
+		style="background-color: #6BC27B;">
+		<ul class="nav navbar-nav navbar-left col-xs-10">
+			<li class="col-xs-3"><a href="/" style="padding: 0px;"><img
+					class="img-responsive" style="width: 125px; height: 50px;"
+					src="/resources/images/logo.jpg" alt="Logo Image"></a></li>
+			<li class="col-xs-7" style="white-space: nowrap; overflow: hidden;"><a
+				href="/"><b
+					style="font-family: arial; font-size: 20px; color: white;">The
+						Museum of Natural Drug Resources of Nepal</b></a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right col-xs-2">
+			<li class="pull-right"><a href="#"
+				style="font-family: arial; font-size: 15px; color: white; white-space: nowrap; overflow: hidden; text-align: right;'"><span
+					class="glyphicon glyphicon-log-in"></span> <span>Login</span></a></li>
+		</ul>
+	</div>
+</nav>
 
-		<div class="page-header text-center">
-			<div class="pull-left logo-imagediv">
-				<img src="/resources/images/logo.jpg" class="logo-image"
-					alt="Logo Image">
-			</div>
-			<div class="main-heading">
-				The Museum of Natural Drug Resources of Nepal
-			</div>
-			<div class="navbar-custom-menu">
-				<ul class="nav navbar-nav">
-					<!-- User Account: style can be found in dropdown.less -->
-					<li class="dropdown user user-menu"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"> <img
-							src="/resources/dist/img/user2-160x160.jpg" class="user-image"
-							alt="User Image"> <span class="hidden-xs">User
-								Options</span>
-					</a>
-						<ul class="dropdown-menu">
-							<!-- User image -->
-							<li class="user-header"><img
-								src="/resources/dist/img/user2-160x160.jpg" class="img-circle"
-								alt="User Image">
 
-								<p>
-									User Name <small></small>
-								</p></li>
-							<!-- Menu Footer-->
-							<li class="user-footer">
-								<div class="text-center">
-									<a href="/logout_farmer" class="btn btn-default btn-flat">Sign
-										out</a>
-								</div>
-							</li>
-						</ul></li>
-					<!-- Control Sidebar Toggle Button -->
-					<li></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-</header>

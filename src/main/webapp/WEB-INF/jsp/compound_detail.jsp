@@ -3,16 +3,11 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<style>
-table, th, td {
-	border: none
-}
-</style>
 <meta name="_csrf" content="${_csrf.token}" />
 <!-- default header name is X-CSRF-TOKEN -->
 <meta name="_csrf_header" content="${_csrf.headerName}" />
 <!-- Main content -->
-<div class="container">
+<div class="container" style = "padding-top: 75px;">
 	<div class="panel panel-success">
 		<h4 class="panel-heading">
 			<b>Compound Name: </b>${compound.name}
@@ -23,8 +18,8 @@ table, th, td {
 		<h4 class="panel-heading">
 			<b>Synonyms:</b>
 			<c:forEach items="${compound.synonymList}" var="synonym">
-				<a class="btn btn-warning"
-					href="/viewCompoundDetail/${synonym.compoundId}" target="_blank">${synonym.name}
+				<a class="btn btn-success"
+					href="/viewCompoundDetail/${synonym.compoundId}">${synonym.name}
 					${synonym.IUPACName} </a>
 
 			</c:forEach>
@@ -44,9 +39,9 @@ table, th, td {
 				<div class="col-md-2">
 					<div class="thumbnail">
 						<a
-							href="../resources/images_herbarium/${chemicalStructure.chemicalStructureId}.jpg"
+							href="../resources/images_chemicalStructure/${chemicalStructure.chemicalStructureId}.jpg"
 							target="_blank"> <img
-							src="../resources/images_herbarium/${chemicalStructure.chemicalStructureId}.jpg"
+							src="../resources/images_chemicalStructure/${chemicalStructure.chemicalStructureId}.jpg"
 							alt="Lights" style="width: 150px; height: 100px">
 							<div class="caption">
 								<p class="text-center">${chemicalStructure.expln}</p>
@@ -61,8 +56,8 @@ table, th, td {
 		<h4 class="panel-heading">
 			<b>Isolated From:</b>
 			<c:forEach items="${compound.isolatedFrom}" var="isolatedFrom">
-				<a class="btn btn-warning"
-					href="/viewGenusDetail/${isolatedFrom.genusId}" target="_blank">${isolatedFrom.name}
+				<a class="btn btn-success"
+					href="/viewGenusDetail/${isolatedFrom.genusId}">${isolatedFrom.name}
 					${isolatedFrom.species} </a>
 
 			</c:forEach>
@@ -72,72 +67,101 @@ table, th, td {
 		<h4 class="panel-heading">
 			<b>Melting Point: </b>${compound.meltingPoint}</h4>
 	</div>
+	<div class="panel panel-success">
+		<h4 class="panel-heading">
+			<b>Solublity:</b>
+		</h4>
+		<div class="panel-body">
+			<div class="col-6 col-sm-3">
+				<b>Hexane: </b>${compound.solubility.hexane}</div>
+			<div class="col-6 col-sm-3">
+				<b>Methanol: </b>${compound.solubility.methanol}</div>
 
-	
-	<b>Solublity</b><br /> <br />
-	<table>
-		<tr>
-			<td>Hexane:</td>
-			<td>${compound.solubility.hexane}</td>
-			<td>Methanol:</td>
-			<td>${compound.solubility.methanol}</td>
-		</tr>
-		<tr>
-			<td>Water:</td>
-			<td>${compound.solubility.water}</td>
-			<td>Ethyl Acetate:</td>
-			<td>${compound.solubility.ethylAcetate}</td>
-		</tr>
-	</table>
-	<hr>
-	<b>Physical Characteristics:</b><br /> <br />
-	${compound.physicalCharacteristics} <br />
-	<hr>
-	<b>IR Data:</b><br /> <br />
-	<table>
-		<tr>
-			<td><img width="300px" height="200px"
-				src="../resources/images_ir_data/${compound.IR_Data.IR_DataId}.jpg"
-				alt="Photo"></td>
-			<td><b>IR Data:<br />
-			</b>${compound.IR_Data.expln}</td>
-		</tr>
-	</table>
-	<hr>
-	<b>NMR Data:</b><br /> <br />
-	<table>
+			<!-- Force next columns to break to new line -->
+			<div class="w-100 d-none d-md-block"></div>
+
+			<div class="col-6 col-sm-3">
+				<b>Water: </b>${compound.solubility.water}</div>
+			<div class="col-6 col-sm-3">
+				<b>Ethyl Acetate: </b>${compound.solubility.ethylAcetate}</div>
+		</div>
+	</div>
+
+	<div class="panel panel-success">
+		<h4 class="panel-heading">
+			<b>Physical Characteristics:</b>
+		</h4>
+		<div class="panel-body" style="text-align: justify;">
+			${compound.physicalCharacteristics}</div>
+	</div>
+	<div class="panel panel-success">
+		<h4 class="panel-heading">
+			<b>IR Data:</b>
+		</h4>
+		<div class="panel-body">
+			<p class="row" style="text-align: justify; padding: 15px;">
+				<img class="pull-left"
+					style="width: 250px; height: 200px; margin-right: 10px; margin-bottom: 10px;"
+					src="../resources/images_ir_data/${compound.IR_Data.IR_DataId}.jpg">
+				<b>IR Data:</b><br /> <br /> <span style="text-align: justify">${compound.IR_Data.expln}</span>
+		</div>
+	</div>
+
+
+	<div class="panel panel-success">
+		<h4 class="panel-heading">
+			<b>NMR Data:</b>
+		</h4>
 		<c:forEach items="${compound.NMR_DataList}" var="NMR_Data">
-			<tr>
-				<td><img width="300px" height="200px"
-					src="../resources/images_nmr_data/${NMR_Data.NMR_DataId}.jpg"
-					alt="Photo"></td>
-				<td><b>${NMR_Data.title}: </b><br />${NMR_Data.expln}</td>
-			</tr>
+			<div class="panel-body">
+				<p class="row" style="text-align: justify; padding: 15px;">
+					<img class="pull-left"
+						style="width: 250px; height: 200px; margin-right: 10px; margin-bottom: 10px;"
+						src="../resources/images_ms_data/${NMR_Data.NMR_DataId}.jpg">
+					<b>${NMR_Data.title}: </b><br /> <br /> <span
+						style="text-align: justify">${NMR_Data.expln}</span>
+			</div>
+			<hr />
 		</c:forEach>
-	</table>
-	<hr>
-	<b>MS Data:</b><br /> <br />
-	<table>
-		<tr>
-			<td><img width="300px" height="200px"
-				src="../resources/images_ms_data/${compound.MS_Data.MS_DataId}.jpg"
-				alt="Photo"></td>
-			<td><b>MS Data:<br />
-			</b>${compound.MS_Data.expln}</td>
-		</tr>
-	</table>
-	<hr>
-	<b>Pharmacological Activity:</b><br /> <br />
-	<c:forEach items="${compound.pharmacologicalActivityList}"
-		var="pharmacologicalActivity">
-			${pharmacologicalActivity.title}:<br />
+	</div>
+	<div class="panel panel-success">
+		<h4 class="panel-heading">
+			<b>MS Data:</b>
+		</h4>
+		<div class="panel-body">
+			<p class="row" style="text-align: justify; padding: 15px;">
+				<img class="pull-left"
+					style="width: 250px; height: 200px; margin-right: 10px; margin-bottom: 10px;"
+					src="../resources/images_ms_data/${compound.MS_Data.MS_DataId}.jpg">
+				<b>MS Data:</b><br /> <br /> <span style="text-align: justify">${compound.MS_Data.expln}</span>
+		</div>
+	</div>
+
+	<div class="panel panel-success">
+		<h4 class="panel-heading">
+			<b>Pharmacological Activity:</b>
+		</h4>
+		<div class="panel-body" style="text-align: justify;">
+			<c:forEach items="${compound.pharmacologicalActivityList}"
+				var="pharmacologicalActivity">
+				<b>${pharmacologicalActivity.title}:</b>
+				<br />
+				<br />
 			${pharmacologicalActivity.expln}<br />
-		<br />
-	</c:forEach>
-	<hr>
-	<b>References:</b><br /> <br />
-	<c:forEach items="${compound.referenceList}" var="reference">
-			${reference}
-	</c:forEach>
-	<hr>
+				<hr />
+			</c:forEach>
+		</div>
+	</div>
+
+	<div class="panel panel-success">
+		<h4 class="panel-heading">
+			<b>References:</b>
+		</h4>
+		<div class="panel-body" style="text-align: justify;">
+			<c:forEach items="${compound.referenceList}" var="reference"
+				varStatus="status">${reference}<c:if
+					test="${!status.last}">, </c:if>
+			</c:forEach>
+		</div>
+	</div>
 </div>

@@ -1,3 +1,8 @@
+/**
+* @author suren
+ *
+*/
+
 package com.mndrn.app;
 
 import org.springframework.boot.SpringApplication;
