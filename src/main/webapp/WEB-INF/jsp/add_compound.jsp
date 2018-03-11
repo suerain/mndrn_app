@@ -15,7 +15,7 @@
 						<label for="exampleInputEmail1" class="col-xs-1 pull-left">Name:</label>
 						<div class="col-xs-4">
 							<form:input path="name" cssClass="form-control" />
-							<form:errors path="name"></form:errors>
+							<form:errors class = "form-error" path="name"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 							Name:</label>
 						<div class="col-xs-3">
 							<form:input path="IUPACName" cssClass="form-control" />
-							<form:errors path="IUPACName"></form:errors>
+							<form:errors class = "form-error" path="IUPACName"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,7 @@
 							Point:</label>
 						<div class="col-xs-1">
 							<form:input path="meltingPoint" cssClass="form-control" />
-							<form:errors path="meltingPoint"></form:errors>
+							<form:errors class = "form-error" path="meltingPoint"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -115,25 +115,25 @@
 						<div class="col-xs-3">
 							<form:input class="form-control input-group-lg" type="text"
 								path="solubility.hexane" placeholder="Hexane" />
-							<form:errors path="solubility.hexane"></form:errors>
+							<form:errors class = "form-error" path="solubility.hexane"></form:errors>
 						</div>
 
 						<div class="col-xs-3">
 							<form:input class="form-control input-group-lg" type="text"
 								path="solubility.methanol" placeholder="Methanol" />
-							<form:errors path="solubility.methanol"></form:errors>
+							<form:errors class = "form-error" path="solubility.methanol"></form:errors>
 						</div>
 
 						<div class="col-xs-3">
 							<form:input class="form-control input-group-lg" type="text"
 								path="solubility.water" placeholder="Water" />
-							<form:errors path="solubility.water"></form:errors>
+							<form:errors class = "form-error" path="solubility.water"></form:errors>
 						</div>
 
 						<div class="col-xs-3">
 							<form:input class="form-control input-group-lg" type="text"
 								path="solubility.ethylAcetate" placeholder="Ethyl Acetate" />
-							<form:errors path="solubility.ethylAcetate"></form:errors>
+							<form:errors class = "form-error" path="solubility.ethylAcetate"></form:errors>
 						</div>
 
 					</div>
@@ -146,7 +146,7 @@
 						<div class="col-xs-9">
 							<form:input path="physicalCharacteristics"
 								cssClass="form-control" type="text-area" />
-							<form:errors path="physicalCharacteristics"></form:errors>
+							<form:errors class = "form-error" path="physicalCharacteristics"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -162,13 +162,13 @@
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="IR_Data.title" placeholder="Image Title" />
-							<form:errors path="IR_Data.title"></form:errors>
+							<form:errors class = "form-error" path="IR_Data.title"></form:errors>
 						</div>
 
 						<div class="col-xs-7">
 							<form:input class="form-control input-group-lg" type="text"
 								path="IR_Data.expln" placeholder="Explanation" />
-							<form:errors path="IR_Data.expln"></form:errors>
+							<form:errors class = "form-error" path="IR_Data.expln"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -210,13 +210,13 @@
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="MS_Data.title" placeholder="Image Title" />
-							<form:errors path="IR_Data.title"></form:errors>
+							<form:errors class = "form-error" path="MS_Data.title"></form:errors>
 						</div>
 
 						<div class="col-xs-7">
 							<form:input class="form-control input-group-lg" type="text"
 								path="MS_Data.expln" placeholder="Explanation" />
-							<form:errors path="MS_Data.expln"></form:errors>
+							<form:errors class = "form-error" path="MS_Data.expln"></form:errors>
 						</div>
 					</div>
 				</div>

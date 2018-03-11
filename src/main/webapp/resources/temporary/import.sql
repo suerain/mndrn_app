@@ -222,3 +222,11 @@ INSERT INTO `mndrnapp`.`genus_compound` (`genus_id`, `compound_id`) VALUES ('1',
 INSERT INTO `mndrnapp`.`genus_compound` (`genus_id`, `compound_id`) VALUES ('2', '1');
 INSERT INTO `mndrnapp`.`genus_compound` (`genus_id`, `compound_id`) VALUES ('2', '2');
 
+INSERT INTO `mndrnapp`.`users` (`member_name`, `password`) VALUES ('amrit', 'amrit');
+INSERT INTO `mndrnapp`.`users` (`member_name`, `password`) VALUES ('suren', 'suren');
+
+INSERT INTO `mndrnapp`.`authorities` (`id`, `authority`, `member_name`) VALUES ('1', 'admin', 'amrit');
+INSERT INTO `mndrnapp`.`authorities` (`id`, `authority`, `member_name`) VALUES ('2', 'user', 'suren');
+
+
+

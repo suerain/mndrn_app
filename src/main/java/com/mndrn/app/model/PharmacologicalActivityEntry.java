@@ -8,6 +8,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
@@ -31,11 +32,12 @@ public class PharmacologicalActivityEntry implements Serializable {
 	private MultipartFile image;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String title;
 
 	@NotNull
-	@Size(min = 1)
+	@Lob
+	@Size(min = 1, message = "Field cannot be empty")
 	private String expln;
 
 	public long getPharmacologicalActivityId() {

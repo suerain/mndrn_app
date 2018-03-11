@@ -31,7 +31,7 @@ public class ChemicalStructureEntry implements Serializable {
 	private MultipartFile image;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String expln;
 
 	public long getChemicalStructureId() {

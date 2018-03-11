@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -28,11 +29,11 @@ public class Genus {
 	private long genusId;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String name;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String species;
 
 	@ManyToMany
@@ -60,11 +61,12 @@ public class Genus {
 	private AshContent ashContent;
 
 	@NotNull
-	@Size(min = 1)
+	@Lob
+	@Size(min = 1, message = "Field cannot be empty")
 	private String physicalCharacteristics;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String moistureContent;
 
 	@OneToMany(cascade = CascadeType.PERSIST)
@@ -72,7 +74,8 @@ public class Genus {
 	private List<TraverseSectionEntry> traverseSectionList;
 
 	@NotNull
-	@Size(min = 1)
+	@Lob
+	@Size(min = 1, message = "Field cannot be empty")
 	private String traverseSectionExpln;
 
 	@OneToOne(cascade = CascadeType.PERSIST)
@@ -95,7 +98,7 @@ public class Genus {
 	private List<Compound> chemConstinuentList;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String DNABarcoding;
 
 	@OneToMany(cascade = CascadeType.PERSIST)

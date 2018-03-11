@@ -5,6 +5,7 @@
 
 package com.mndrn.app.controller;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,7 @@ import com.mndrn.app.model.TraverseSectionEntry;
 import com.mndrn.app.service.IGenusService;
 
 @Controller
+// @RequestMapping("/mndrnapp")
 public class GenusController {
 
 	private void initGenus(Genus genus) {
@@ -77,9 +79,13 @@ public class GenusController {
 	}
 
 	@RequestMapping(value = "/searchByGenus", method = { RequestMethod.GET })
-	public String searchByGenus(@ModelAttribute("searchCriteria") SearchCriteria searchCriteria, Model model) {
-		List<Genus> tempList = this.genusService.getGenusByCriteria(searchCriteria);
+	public String searchByGenus(@ModelAttribute("searchCriteria") SearchCriteria searchCriteria, Model model,
+			Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 
+		List<Genus> tempList = this.genusService.getGenusByCriteria(searchCriteria);
 		List<Genus> genusList = new ArrayList<Genus>();
 		String localName = (searchCriteria.getLocalName() != null) ? searchCriteria.getLocalName() : "";
 
@@ -93,18 +99,25 @@ public class GenusController {
 		}
 		model.addAttribute("genusList", genusList);
 		model.addAttribute("content", "dashboard");
+		model.addAttribute("principal", principal);
 		return "base_template";
 	}
 
 	@RequestMapping(value = "/viewGenusDetail/{genusId}", method = RequestMethod.GET)
-	public String viewGenusDetail(Model model, @PathVariable("genusId") long genusId) {
+	public String viewGenusDetail(Model model, @PathVariable("genusId") long genusId, Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 		model.addAttribute("genus", this.genusService.findOne(genusId));
 		model.addAttribute("content", "genus_detail");
 		return "base_template";
 	}
 
 	@RequestMapping(value = "/addGenus", method = RequestMethod.GET)
-	public String addGenusForm(@ModelAttribute("genus") Genus genus, Model model) {
+	public String addGenusForm(@ModelAttribute("genus") Genus genus, Model model, Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 		// Initialize genus with required list so that they can be iterated in
 		// Form
 		this.initGenus(genus);
@@ -113,8 +126,10 @@ public class GenusController {
 	}
 
 	@RequestMapping(value = "/addGenus", method = RequestMethod.POST)
-	public String addGenus(Model model, @Valid Genus genus, BindingResult bindingResult) {
-
+	public String addGenus(Model model, @Valid Genus genus, BindingResult bindingResult, Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("content", "add_genus");
 			return "base_template";

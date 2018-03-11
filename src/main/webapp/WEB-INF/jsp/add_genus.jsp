@@ -16,7 +16,7 @@
 						<label for="exampleInputEmail1" class="col-xs-1 pull-left">Name:</label>
 						<div class="col-xs-4">
 							<form:input path="name" cssClass="form-control" />
-							<form:errors path="name"></form:errors>
+							<form:errors class = "form-error" path="name"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -26,7 +26,7 @@
 						<label for="exampleInputEmail1" class="col-xs-1 pull-left">Species:</label>
 						<div class="col-xs-4">
 							<form:input path="species" cssClass="form-control" />
-							<form:errors path="species"></form:errors>
+							<form:errors class = "form-error" path="species"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -140,21 +140,21 @@
 						<div class="col-xs-3">
 							<form:input class="form-control input-group-lg" type="text"
 								path="ashContent.totalAsh" placeholder="Total Ash" />
-							<form:errors path="ashContent.totalAsh"></form:errors>
+							<form:errors class = "form-error" path="ashContent.totalAsh"></form:errors>
 						</div>
 
 						<div class="col-xs-3">
 							<form:input class="form-control input-group-lg" type="text"
 								path="ashContent.acidInsolubleAsh"
 								placeholder="Acid-Insoluble Ash" />
-							<form:errors path="ashContent.acidInsolubleAsh"></form:errors>
+							<form:errors class = "form-error" path="ashContent.acidInsolubleAsh"></form:errors>
 						</div>
 
 						<div class="col-xs-3">
 							<form:input class="form-control input-group-lg" type="text"
 								path="ashContent.waterSolubleAsh"
 								placeholder="Water-Soluble Ash" />
-							<form:errors path="ashContent.waterSolubleAsh"></form:errors>
+							<form:errors class = "form-error" path="ashContent.waterSolubleAsh"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -166,7 +166,7 @@
 						<div class="col-xs-9">
 							<form:input path="physicalCharacteristics"
 								cssClass="form-control" type="text-area" />
-							<form:errors path="physicalCharacteristics"></form:errors>
+							<form:errors class = "form-error" path="physicalCharacteristics"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -177,7 +177,7 @@
 							Content:</label>
 						<div class="col-xs-1">
 							<form:input path="moistureContent" cssClass="form-control" />
-							<form:errors path="moistureContent"></form:errors>
+							<form:errors class = "form-error" path="moistureContent"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -188,7 +188,7 @@
 							Section:</label>
 						<div class="col-xs-10">
 							<form:input path="traverseSectionExpln" cssClass="form-control" />
-							<form:errors path="traverseSectionExpln"></form:errors>
+							<form:errors class = "form-error" path="traverseSectionExpln"></form:errors>
 						</div>
 					</div>
 					<c:forEach items="${genus.traverseSectionList}"
@@ -217,7 +217,7 @@
 						<div class="col-xs-10">
 							<form:input path="photoChemScreening.expln"
 								cssClass="form-control" />
-							<form:errors path="photoChemScreening.expln"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.expln"></form:errors>
 						</div>
 					</div>
 					<br />
@@ -250,31 +250,31 @@
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.leaf.photoSterolLevel"
 								placeholder="Leaf-PhotoSterol Level" />
-							<form:errors path="photoChemScreening.leaf.photoSterolLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.leaf.photoSterolLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.leaf.alkaloidLevel"
 								placeholder="Leaf-Alkaloid Level" />
-							<form:errors path="photoChemScreening.leaf.alkaloidLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.leaf.alkaloidLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.leaf.saponinLevel"
 								placeholder="Leaf-Saponin Level" />
-							<form:errors path="photoChemScreening.leaf.saponinLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.leaf.saponinLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.leaf.flavonoidLevel"
 								placeholder="Leaf-Flavonoid Level" />
-							<form:errors path="photoChemScreening.leaf.flavonoidLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.leaf.flavonoidLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.leaf.anthraquinoneLevel"
 								placeholder="Leaf-Anthraquinone Level" />
-							<form:errors path="photoChemScreening.leaf.anthraquinoneLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.leaf.anthraquinoneLevel"></form:errors>
 						</div>
 					</div>
 
@@ -286,31 +286,31 @@
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.bark.photoSterolLevel"
 								placeholder="Bark-PhotoSterol Level" />
-							<form:errors path="photoChemScreening.bark.photoSterolLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.bark.photoSterolLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.bark.alkaloidLevel"
 								placeholder="Bark-Alkaloid Level" />
-							<form:errors path="photoChemScreening.bark.alkaloidLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.bark.alkaloidLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.bark.saponinLevel"
 								placeholder="Bark-Saponin Level" />
-							<form:errors path="photoChemScreening.bark.saponinLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.bark.saponinLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.bark.flavonoidLevel"
 								placeholder="Bark-Flavonoid Level" />
-							<form:errors path="photoChemScreening.bark.flavonoidLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.bark.flavonoidLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.bark.anthraquinoneLevel"
 								placeholder="Bark-Anthraquinone Level" />
-							<form:errors path="photoChemScreening.bark.anthraquinoneLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.bark.anthraquinoneLevel"></form:errors>
 						</div>
 					</div>
 
@@ -322,31 +322,31 @@
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.fruit.photoSterolLevel"
 								placeholder="Fruit-PhotoSterol Level" />
-							<form:errors path="photoChemScreening.fruit.photoSterolLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.fruit.photoSterolLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.fruit.alkaloidLevel"
 								placeholder="Fruit-Alkaloid Level" />
-							<form:errors path="photoChemScreening.fruit.alkaloidLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.fruit.alkaloidLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.fruit.saponinLevel"
 								placeholder="Fruit-Saponin Level" />
-							<form:errors path="photoChemScreening.fruit.saponinLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.fruit.saponinLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.fruit.flavonoidLevel"
 								placeholder="Fruit-Flavonoid Level" />
-							<form:errors path="photoChemScreening.fruit.flavonoidLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.fruit.flavonoidLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.fruit.anthraquinoneLevel"
 								placeholder="Fruit-Anthraquinone Level" />
-							<form:errors path="photoChemScreening.fruit.anthraquinoneLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.fruit.anthraquinoneLevel"></form:errors>
 						</div>
 					</div>
 
@@ -358,31 +358,31 @@
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.root.photoSterolLevel"
 								placeholder="Root-PhotoSterol Level" />
-							<form:errors path="photoChemScreening.root.photoSterolLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.root.photoSterolLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.root.alkaloidLevel"
 								placeholder="Root-Alkaloid Level" />
-							<form:errors path="photoChemScreening.root.alkaloidLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.root.alkaloidLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.root.saponinLevel"
 								placeholder="Root-Saponin Level" />
-							<form:errors path="photoChemScreening.root.saponinLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.root.saponinLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.root.flavonoidLevel"
 								placeholder="Root-Flavonoid Level" />
-							<form:errors path="photoChemScreening.root.flavonoidLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.root.flavonoidLevel"></form:errors>
 						</div>
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="photoChemScreening.root.anthraquinoneLevel"
 								placeholder="Root-Anthraquinone Level" />
-							<form:errors path="photoChemScreening.root.anthraquinoneLevel"></form:errors>
+							<form:errors class = "form-error" path="photoChemScreening.root.anthraquinoneLevel"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -398,13 +398,13 @@
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="HPLC_Profile.title" placeholder="Image Title" />
-							<form:errors path="HPLC_Profile.title"></form:errors>
+							<form:errors class = "form-error" path="HPLC_Profile.title"></form:errors>
 						</div>
 
 						<div class="col-xs-7">
 							<form:input class="form-control input-group-lg" type="text"
 								path="HPLC_Profile.expln" placeholder="Explanation" />
-							<form:errors path="HPLC_Profile.expln"></form:errors>
+							<form:errors class = "form-error" path="HPLC_Profile.expln"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -420,13 +420,13 @@
 						<div class="col-xs-2">
 							<form:input class="form-control input-group-lg" type="text"
 								path="TLC_Profile.title" placeholder="Image Title" />
-							<form:errors path="TLC_Profile.title"></form:errors>
+							<form:errors class = "form-error" path="TLC_Profile.title"></form:errors>
 						</div>
 
 						<div class="col-xs-7">
 							<form:input class="form-control input-group-lg" type="text"
 								path="TLC_Profile.expln" placeholder="Explanation" />
-							<form:errors path="TLC_Profile.expln"></form:errors>
+							<form:errors class = "form-error" path="TLC_Profile.expln"></form:errors>
 						</div>
 					</div>
 				</div>
@@ -459,7 +459,7 @@
 							Barcoding:</label>
 						<div class="col-xs-3">
 							<form:input path="DNABarcoding" cssClass="form-control" />
-							<form:errors path="DNABarcoding"></form:errors>
+							<form:errors class = "form-error" path="DNABarcoding"></form:errors>
 						</div>
 					</div>
 				</div>

@@ -18,19 +18,19 @@ public class Solubility {
 	private long id;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String hexane;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String methanol;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String water;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String ethylAcetate;
 
 	public long getId() {

@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid col-xs-12"
 		style="background-color: #6BC27B;">
@@ -11,9 +12,18 @@
 						Museum of Natural Drug Resources of Nepal</b></a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right col-xs-2">
-			<li class="pull-right"><a href="#"
-				style="font-family: arial; font-size: 15px; color: white; white-space: nowrap; overflow: hidden; text-align: right;'"><span
-					class="glyphicon glyphicon-log-in"></span> <span>Login</span></a></li>
+			<c:choose>
+				<c:when test="${principal == null}">
+					<li class="pull-right"><a href="/login"
+						style="font-family: arial; font-size: 15px; color: white; white-space: nowrap; overflow: hidden; text-align: right;'"><span
+							class="glyphicon glyphicon-log-in"></span> <span>Login</span></a></li>
+				</c:when>
+				<c:otherwise>
+				<li class="pull-right"><a href="/logout"
+						style="font-family: arial; font-size: 15px; color: white; white-space: nowrap; overflow: hidden; text-align: right;'"><span
+							class="glyphicon glyphicon-log-in"></span> <span>Sign Out</span></a></li>
+				</c:otherwise>
+			</c:choose>
 		</ul>
 	</div>
 </nav>

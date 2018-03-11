@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -28,7 +29,7 @@ public class Compound {
 	private long compoundId;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String name;
 
 	@ManyToMany
@@ -36,7 +37,7 @@ public class Compound {
 	private List<Compound> synonymList;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String IUPACName;
 
 	@OneToMany(cascade = CascadeType.PERSIST)
@@ -46,7 +47,7 @@ public class Compound {
 	@ManyToMany(mappedBy = "chemConstinuentList")
 	private List<Genus> isolatedFrom;
 
-	@NotNull
+	@NotNull(message = "Field cannot be empty")
 	private Double meltingPoint;
 
 	@OneToOne(cascade = CascadeType.PERSIST)
@@ -55,7 +56,8 @@ public class Compound {
 	private Solubility solubility;
 
 	@NotNull
-	@Size(min = 1, max = Integer.MAX_VALUE, message = "The physicalCharacteristics value cannot be null")
+	@Lob
+	@Size(min = 1, message = "Field cannot be empty")
 	private String physicalCharacteristics;
 
 	@OneToOne(cascade = CascadeType.PERSIST)

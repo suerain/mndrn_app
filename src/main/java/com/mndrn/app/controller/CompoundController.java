@@ -5,6 +5,7 @@
 
 package com.mndrn.app.controller;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +29,7 @@ import com.mndrn.app.model.SearchCriteria;
 import com.mndrn.app.service.ICompoundService;
 
 @Controller
+// @RequestMapping("/mndrnapp")
 public class CompoundController {
 
 	private void initCompound(Compound compound) {
@@ -62,7 +64,11 @@ public class CompoundController {
 	}
 
 	@RequestMapping(value = "/searchByCompound", method = { RequestMethod.GET })
-	public String searchByCompound(@ModelAttribute("searchCriteria") SearchCriteria searchCriteria, Model model) {
+	public String searchByCompound(@ModelAttribute("searchCriteria") SearchCriteria searchCriteria, Model model,
+			Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 		List<Compound> tempList = this.compoundService.getCompoundByCriteria(searchCriteria);
 		List<Compound> compoundList = new ArrayList<Compound>();
 		String biologicalActivity = searchCriteria.getBiologicalActivity();
@@ -85,7 +91,10 @@ public class CompoundController {
 	}
 
 	@RequestMapping(value = "/viewCompoundDetail/{compoundId}", method = RequestMethod.GET)
-	public String viewCompoundDetail(Model model, @PathVariable("compoundId") long compoundId) {
+	public String viewCompoundDetail(Model model, @PathVariable("compoundId") long compoundId, Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 		model.addAttribute("compound", this.compoundService.findOne(compoundId));
 		model.addAttribute("content", "compound_detail");
 		return "base_template";
@@ -93,7 +102,11 @@ public class CompoundController {
 	}
 
 	@RequestMapping(value = "/linkToCompound", method = { RequestMethod.GET })
-	public String linkToCompound(@ModelAttribute("searchCriteria") SearchCriteria searchCriteria, Model model) {
+	public String linkToCompound(@ModelAttribute("searchCriteria") SearchCriteria searchCriteria, Model model,
+			Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 		List<Compound> compoundList = this.compoundService.getCompoundByCriteria(searchCriteria);
 		Compound compound = null;
 		if (compoundList != null && compoundList.size() > 0) {
@@ -111,7 +124,10 @@ public class CompoundController {
 	}
 
 	@RequestMapping(value = "/addCompound", method = RequestMethod.GET)
-	public String addCompoundForm(@ModelAttribute("compound") Compound compound, Model model) {
+	public String addCompoundForm(@ModelAttribute("compound") Compound compound, Model model, Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 		// Initialize compound with required list so that they can be iterated
 		// in Form
 		this.initCompound(compound);
@@ -120,7 +136,10 @@ public class CompoundController {
 	}
 
 	@RequestMapping(value = "/addCompound", method = RequestMethod.POST)
-	public String addCompound(Model model, @Valid Compound compound, BindingResult bindingResult) {
+	public String addCompound(Model model, @Valid Compound compound, BindingResult bindingResult, Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal);
+		}
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("content", "add_compound");
 			return "base_template";

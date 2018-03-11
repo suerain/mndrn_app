@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -23,11 +25,16 @@ public class Credentials {
 	@Id
 	@Column(name = "MemberName", nullable = false, unique = true)
 	private String username;
+	
 	@NotEmpty
-	@Column(name = "PASSWORD", nullable = false)
+	@Column(name = "PASSWORD")
+	@Size(min = 1, message = "Field cannot be empty")
 	private String password;
+	
 	@Transient
+	@Size(min = 1, message = "Field cannot be empty")
 	private String confirmPassword;
+	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonIgnore
 	@JoinColumn(name = "MemberName", referencedColumnName = "MemberName")

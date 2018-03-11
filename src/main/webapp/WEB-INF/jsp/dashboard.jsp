@@ -9,7 +9,7 @@
 
 
 <!-- Main content -->
-<div class="container" style = "padding-top: 75px;">
+<div class="container" style="padding-top: 75px;">
 	<div
 		style="text-align: justify; color: #6BC27B; font-family: arial; font-size: 18px; padding-right: 50px">
 		<p>The Museum of Natural Drug Resources of Nepal provides complete
@@ -34,17 +34,17 @@
 				<div class="form-group">
 					<label for="exampleInputEmail1">Genus:</label>
 					<form:input path="genusName" cssClass="form-control" />
-					<form:errors path="genusName"></form:errors>
+					<form:errors class="form-error" path="genusName"></form:errors>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">Species:</label>
 					<form:input path="species" cssClass="form-control" />
-					<form:errors path="species"></form:errors>
+					<form:errors class="form-error" path="species"></form:errors>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">Local Name:</label>
 					<form:input path="localName" cssClass="form-control" />
-					<form:errors path="localName"></form:errors>
+					<form:errors class="form-error" path="localName"></form:errors>
 				</div>
 				<button id="searchByGenus">Search</button>
 			</div>
@@ -66,10 +66,13 @@
 				</table>
 			</div>
 		</c:if>
-		<div class="add-item">
-			<a class="btn btn-success btn-xs" href="/addGenus"> Add New Genus
-			</a>
-		</div>
+		<c:if test="${admin}">
+			<div class="add-item">
+				<a class="btn btn-success btn-xs" href="/addGenus"> Add New
+					Genus </a>
+			</div>
+		</c:if>
+
 	</div>
 	<div class="col-xs-6">
 		<form:form action="searchByCompound" method="GET"
@@ -79,17 +82,17 @@
 				<div class="form-group">
 					<label for="exampleInputEmail1">Compound Name:</label>
 					<form:input path="compoundName" cssClass="form-control" />
-					<form:errors path="compoundName"></form:errors>
+					<form:errors class="form-error" path="compoundName"></form:errors>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">IUPAC Name:</label>
 					<form:input path="iUPACName" cssClass="form-control" />
-					<form:errors path="iUPACName"></form:errors>
+					<form:errors class="form-error" path="iUPACName"></form:errors>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">Biological Activity:</label>
 					<form:input path="biologicalActivity" cssClass="form-control" />
-					<form:errors path="biologicalActivity"></form:errors>
+					<form:errors class="form-error" path="biologicalActivity"></form:errors>
 				</div>
 				<button id="searchByCompound">Search</button>
 			</div>
@@ -116,10 +119,11 @@
 				</div>
 			</div>
 		</c:if>
-
-		<div class="add-item">
-			<a class="btn btn-success btn-xs" href="/addCompound"> Add New
-				Compound </a>
-		</div>
+		<c:if test="${admin}">
+			<div class="add-item">
+				<a class="btn btn-success btn-xs" href="/addCompound"> Add New
+					Compound </a>
+			</div>
+		</c:if>
 	</div>
 </div>

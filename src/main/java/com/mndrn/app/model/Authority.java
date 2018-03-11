@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity(name = "AUTHORITIES")
 public class Authority implements Serializable{
@@ -22,7 +23,8 @@ public class Authority implements Serializable{
 	@Column(name="ID")
 	private int id;
 
-  	@Column(name = "AUTHORITY", nullable = false)
+  	@Column(name = "AUTHORITY")
+  	@Size(min = 1, message = "Field cannot be empty")
  	private String authority;
  	
 	 public int getId() {

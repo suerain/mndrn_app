@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,6 +29,7 @@ public class Member {
 
 	@NotEmpty
 	@Column(name = "firstName")
+	@Size(min = 1, message = "Field cannot be empty")
 	private String firstName;
 
 	@Column(name = "middleName")
@@ -34,17 +37,21 @@ public class Member {
 
 	@NotEmpty
 	@Column(name = "lastName")
+	@Size(min = 1, message = "Field cannot be empty")
 	private String lastName;
 	@NotEmpty
 
 	@Column(name = "email")
+	@Size(min = 1, message = "Field cannot be empty")
 	private String email;
 
 	@Column(name = "dateOfMembership")
+	@Size(min = 1, message = "Field cannot be empty")
 	private Date dateOfMembership = new Date();
 
 	@NotEmpty
 	@Column(name = "Phone")
+	@Size(min = 1, message = "Field cannot be empty")
 	private String phone;
 
 	@Valid

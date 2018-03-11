@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -44,7 +45,8 @@ public class PhotoChemicalScreening {
 	private PlantParts root;
 
 	@NotNull
-	@Size(min = 1)
+	@Lob
+	@Size(min = 1, message = "Field cannot be empty")
 	private String expln;
 
 	public long getId() {

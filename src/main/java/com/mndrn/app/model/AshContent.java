@@ -18,15 +18,15 @@ public class AshContent {
 	private long id;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String totalAsh;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String acidInsolubleAsh;
 
 	@NotNull
-	@Size(min = 1)
+	@Size(min = 1, message = "Field cannot be empty")
 	private String waterSolubleAsh;
 
 	public long getId() {
